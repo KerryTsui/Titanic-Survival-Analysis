@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
-import re
+from random import choice
 import sklearn
 import seaborn as sns
 
@@ -28,3 +28,4 @@ test_age_mode = pd.value_counts(test_data['Age']).index[0]
 test_emb_mode = pd.value_counts(test_data['Embarked']).index[0]
 test_data['Age']=test_data['Age'].fillna(test_age_mode)
 test_data['Embarked']=test_data['Embarked'].fillna('S')
+test_data['Sex'] = test_data['Sex'].fillna(choice(['male', 'female']))
